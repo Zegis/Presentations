@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="141mm"
+   height="81mm"
+   viewBox="0 0 141 81"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="iam.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:object-paths="true"
+     inkscape:zoom="1"
+     inkscape:cx="289"
+     inkscape:cy="384.5"
+     inkscape:window-width="1920"
+     inkscape:window-height="1027"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     width="209mm" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Warstwa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#008080;fill-rule:evenodd;stroke-width:0.264583"
+       id="rect11302"
+       width="70.643745"
+       height="41.010418"
+       x="0.26458281"
+       y="0.26458409"
+       ry="16.404165" />
+    <rect
+       style="fill:#800080;fill-rule:evenodd;stroke-width:0.264583"
+       id="rect11302-5"
+       width="70.643745"
+       height="41.010418"
+       x="70.776039"
+       y="-0.66146034"
+       ry="16.404165" />
+    <rect
+       style="fill:#d40000;fill-rule:evenodd;stroke-width:0.264583"
+       id="rect11302-5-8"
+       width="70.643745"
+       height="41.010418"
+       x="70.776039"
+       y="40.348957"
+       ry="16.404165" />
+    <rect
+       style="fill:#808000;fill-rule:evenodd;stroke-width:0.264583"
+       id="rect11302-5-8-3"
+       width="70.643745"
+       height="41.010418"
+       x="0.39687842"
+       y="41.142708"
+       ry="16.404165" />
+    <circle
+       style="fill:#f9f9f9;fill-rule:evenodd;stroke-width:0.264583"
+       id="path12104"
+       cx="70.908318"
+       cy="41.275002"
+       r="28.575001" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:17.3477px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.433694"
+       x="58.24337"
+       y="45.255436"
+       id="text13186"
+       transform="scale(0.95290969,1.0494174)"><tspan
+         id="tspan13184"
+         style="stroke-width:0.433694"
+         x="58.24337"
+         y="45.255436"
+         sodipodi:role="line">IAM</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:6.35px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="3.9687502"
+       y="19.579166"
+       id="text31733"><tspan
+         sodipodi:role="line"
+         id="tspan31731"
+         style="font-size:6.35px;fill:#ffffff;stroke-width:0.264583"
+         x="3.9687502"
+         y="19.579166">Authentication</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:6.35px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="94.162666"
+       y="21.077597"
+       id="text43208"><tspan
+         sodipodi:role="line"
+         id="tspan43206"
+         style="font-size:6.35px;fill:#ffffff;stroke-width:0.264583"
+         x="94.162666"
+         y="21.077597">Authorization</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:6.35px;line-height:1.25;font-family:sans-serif;fill:#ffffff;stroke-width:0.264583"
+       x="11.1125"
+       y="61.912498"
+       id="text50868"><tspan
+         sodipodi:role="line"
+         id="tspan50866"
+         style="fill:#ffffff;stroke-width:0.264583"
+         x="11.1125"
+         y="61.912498">User</tspan><tspan
+         sodipodi:role="line"
+         style="fill:#ffffff;stroke-width:0.264583"
+         x="11.1125"
+         y="69.849998"
+         id="tspan51486">Management</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:6.35px;line-height:1.25;font-family:sans-serif;fill:#ffffff;stroke-width:0.264583"
+       x="95.249992"
+       y="61.118752"
+       id="text53944"><tspan
+         sodipodi:role="line"
+         id="tspan53942"
+         style="fill:#ffffff;stroke-width:0.264583"
+         x="95.249992"
+         y="61.118752">Central User</tspan><tspan
+         sodipodi:role="line"
+         style="fill:#ffffff;stroke-width:0.264583"
+         x="95.249992"
+         y="69.056252"
+         id="tspan53946">Repository</tspan></text>
+  </g>
+</svg>
