@@ -59,6 +59,22 @@
                 </section>
                 <section>
                     <section><h2>Basic configuration</h2></section>
+                    <section>
+                        <p>To install keycloak just download and extract archive from official website.</p>
+                        <p class="fragment" data-fragment-index="0">
+                            Important:<br> <span class="fragment highlight-current-blue" data-fragment-index="0">Always check the Java requirements!</span><br/>
+                            <span class="fragment highlight-current-blue">If you have anything running on port 8080 - turn it off.</span>
+                        </p>
+                    </section>
+                    <section>
+                        <div class="r-stack">
+                            <img class="fragment fade-out" data-fragment-index="0" src="assets/realm_user_client.svg">
+                            <p class="fragment" data-fragment-index="0">
+                                <span class="fragment highlight-current-red" data-fragment-index="0">By default all realm users have access to every client.</span><br>
+                                <span class="fragment">This can be configured by setting "Authorization Enabled" setting, and configuring authorization policies.</span>
+                            </p>
+                        </div>
+                    </section>
                     <section><h2>Default realm, client, users</h2>
                     </section>
                 </section>
