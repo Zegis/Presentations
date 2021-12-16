@@ -6,6 +6,7 @@
         <title>Introduction to Keycloak</title>
         <link rel="stylesheet" href="node_modules/reveal.js/dist/reveal.css">
         <link rel="stylesheet" href="node_modules/reveal.js/dist/theme/white.css">
+        <link rel="stylesheet" href="node_modules/reveal.js/plugin/highlight/monokai.css">
     </head>
     <body>
         <div class="reveal">
@@ -75,7 +76,15 @@
                             </p>
                         </div>
                     </section>
-                    <section><h2>Default realm, client, users</h2>
+                    <section>
+                            <p>On Windows run:</p>
+                            <pre>
+                                <code data-trim data-noescape class="language-bash">
+                                    .\bin\standalone.bat
+                                </code>
+                            </pre>
+                            <p>Navigate to <a href="http://localhost:8080/auth" target="_blank">http://localhost:8080/auth</a>
+                                to create admin user and start configuration!</p>
                     </section>
                 </section>
                 <section>
@@ -91,8 +100,11 @@
             </div>
         </div>
         <script src="node_modules/reveal.js/dist/reveal.js"></script>
+        <script src="node_modules/reveal.js/plugin/highlight/highlight.js"></script>
         <script>
-            Reveal.initialize();
+            Reveal.initialize({
+                plugins: [RevealHighlight]
+            });
         </script>
     </body>
 </html>
