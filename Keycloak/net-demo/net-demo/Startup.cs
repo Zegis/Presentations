@@ -22,7 +22,7 @@ namespace net_demo
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            IdentityModelEventSource.ShowPII = true;
+            IdentityModelEventSource.ShowPII = true; // not use in prod
 
             services.AddControllers();
 
@@ -34,7 +34,7 @@ namespace net_demo
             {
                 o.Authority = Configuration["jwt:Authority"];
                 o.Audience = Configuration["jwt:Audience"];
-                o.RequireHttpsMetadata = false;
+                o.RequireHttpsMetadata = false; // Remove outside of localhost ;)
                 o.Events = new JwtBearerEvents()
                 {
                     OnAuthenticationFailed = context =>
@@ -43,11 +43,16 @@ namespace net_demo
                         context.Response.StatusCode = 500;
                         context.Response.ContentType = "text/plain";
 
-                        context.Response.WriteAsync(context.Exception.ToString());
+                        context.Response.WriteAsync(context.Exception.ToString()); // not use in prod
                         
                         return context.Response.WriteAsync("Brak dostepu! Ha! Ha! =D");
                     }
                 };
+            });
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("Administrator", policy => policy.RequireClaim("user_roles", "Administrator"));
             });
         }
 
