@@ -43,7 +43,16 @@
     "parserOptions": {
       "ecmaVersion": 2020
     },
-    "rules": {}
+    "rules": {
+      "no-param-reassign": [
+        "error", {
+          "props": true,
+          "ignorePropertyModificationsFor": [
+            "app"
+          ]
+        }
+      ]
+    }
   },
   "browserslist": [
     "> 1%",
