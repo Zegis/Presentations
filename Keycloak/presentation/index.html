@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Introduction to Keycloak</title>
+        <link rel="stylesheet" href="node_modules/reveal.js/dist/reveal.css">
+        <link rel="stylesheet" href="node_modules/reveal.js/dist/theme/white.css">
+        <link rel="stylesheet" href="node_modules/reveal.js/plugin/highlight/monokai.css">
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section><h1>Introduction to Keycloak</h1></section>
+                <section><h2>Agenda</h2>
+                    <ul>
+                        <li>What's IAM?</li>
+                        <li>When should I use?</li>
+                        <li>Basic configuration</li>
+                        <li>Example integration</li>
+                        <li>Customizing Keycloak</li>
+                    </ul>
+                </section>
+                <section>
+                    <section><h2>What's IAM?</h2></section>
+                    <section>
+                        <h2>Identity Access Management</h2>
+                        <img src="assets/iam.svg"/>
+                    </section>
+                    <section><p>Responsibilities:
+                        <ul>
+                            <li class="fragment fade-up">Storing user credentials</li>
+                            <li class="fragment fade-up">Storing common user data such as name or email</li>
+                            <li class="fragment fade-up">Providing application specific login workflows for each application</li>
+                            <li class="fragment fade-up">Mapping users between various systems</li>
+                            <li class="fragment fade-up">Facilitating SSO to 3rd party applications</li>
+                            <li class="fragment fade-up">User group management</li>
+                            <li class="fragment fade-up">Application specific roles for users</li>
+                            <li class="fragment fade-up">Impersonation of users</li>
+                        </ul>
+                    </p>
+                    </section>
+                    <section>
+                        <p>IAM software are:
+                            <ul>
+                                <li class="fragment fade-up">Okta</li>
+                                <li class="fragment fade-up">Keycloak</li>
+                                <li class="fragment fade-up">AWS IAM</li>
+                                <li class="fragment fade-up">Azure Active Directory</li>
+                                <li class="fragment fade-up">And many others...</li>
+                            </ul>
+                        </p>
+                    </section>
+                </section>
+                <section>
+                        <div class="r-stack">
+                            <h2 class="fragment fade-out" data-fragment-index="0">When I should use?</h2>
+                            <img class="fragment fade-in" data-fragment-index="0" src="assets/where_to_use.PNG">
+                        </div>
+                </section>
+                <section>
+                    <section><h2>Basic configuration</h2></section>
+                    <section>
+                        <p>To install keycloak just download and extract archive from official website.</p>
+                        <p class="fragment" data-fragment-index="0">
+                            Important:<br> <span class="fragment highlight-current-blue" data-fragment-index="0">Always check the Java requirements!</span><br/>
+                            <span class="fragment highlight-current-blue">If you have anything running on port 8080 - turn it off.</span>
+                        </p>
+                    </section>
+                    <section>
+                            <div class="r-stack">
+                                <div class="fragment  fade-out" data-fragment-index="0">
+                                    <p>On Windows run:</p>
+                                    <pre>
+                                        <code data-trim data-noescape class="language-bash">
+                                            .\bin\standalone.bat
+                                        </code>
+                                    </pre>
+                                    <p>Navigate to <a href="http://localhost:8080/auth" target="_blank">http://localhost:8080/auth</a>
+                                        to create admin user and start configuration!</p>
+                                </div>
+                                <img class="fragment" data-fragment-index="0" src="assets/create_admin.PNG">
+                            </div>
+                    </section>
+                    <section>
+                        <div class="r-stack">
+                            <img class="fragment fade-out" data-fragment-index="0" src="assets/realm_user_client.svg">
+                            <p class="fragment" data-fragment-index="0">
+                                <span class="fragment highlight-current-red" data-fragment-index="0">By default all realm users have access to every client.</span><br>
+                                <span class="fragment">This can be configured by setting "Authorization Enabled" setting, and configuring authorization policies.</span>
+                            </p>
+                        </div>
+                    </section>
+                    <section>
+                            <ul>Realm configuration</ul>
+                            <li>Basic</li>
+                            <li class="fragment">Email </li>
+                    </section>
+                    <section>
+                        <ul>Client configuration</ul>
+                        <li>Basic - Redirect, Base URLs, Web Origins</li>
+                        <li class="fragment">Creating a user</li>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Example integration</h2>
+                    </section>
+                    <section>
+                        <h2>Basic vue.js integration</h2>
+                    </section>
+                    <section>
+                        <ul>Is it that simple?</ul>
+                        <li class="fragment">If I'm asking you probably know the answer ;)</li>
+                        <li class="fragment">Lack of reference to keycloak. <span class="fragment">Vue plugin to the rescue!</span></li>
+                        <li class="fragment">Navgation guard</li>
+                        <li class="fragment">Access to token passed client values! <br>
+                            <span class="fragment">...</span><span class="fragment"> but... there are none :(</span></li>
+                        <li class="fragment">Let's talk about client mappers</li>
+                        <li class="fragment">And now it works x)</li>
+                        <li class="fragment">Final world about roles and groups</li>
+                    </section>
+                    <section>
+                        <h2>What about API?</h2>
+                        <p class="fragment">.NET API example</p>
+                    </section>
+                    <section>
+                        <ul>Is it that simple?</ul>
+                        <li class="fragment">Well... <span class="fragment">suprisingly... yes.</span></li>
+                        <li class="fragment">What about roles?</li>
+                    </section>
+                </section>
+                <section>
+                    <section><h2>Keycloak customization</h2></section>
+                    <section><h2>What we can customize?</h2>
+                        <ul>
+                            <li class="fragment" data-fragment-index="0">How keycloak looks!</li>
+                            <li class="fragment" data-fragment-index="1">Probably everything else - Extensions<br/>
+                                <span class="fragment" data-fragment-index="2">
+                                    <span class="fragment highlight-red" data-fragment-index="2">
+                                        Though we won't talk about them
+                                    </span>
+                                </span>                           
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Themes</h2>
+                        <ul>
+                            <li>They use FTL - FreeMarker java template engine</li>
+                            <li class="fragment">2 basic templates:
+                                <ul>
+                                    <li class="fragment">Keycloak</li>
+                                    <li class="fragment">Base</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>What we can style</h2>
+                        <ul>
+                            <li class="fragment">Login pages</li>
+                            <li class="fragment">Account management pages</li>
+                            <li class="fragment">Admin console</li>
+                            <li class="fragment">Emails sent from keycloak</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Template anatomy</h2>
+                        <ul>
+                            <li class="fragment">Properties</li>
+                            <li class="fragment">Template file</li>
+                            <li class="fragment">Specific site files</li>
+                            <li class="fragment">Resources</li>
+                            <li class="fragment">Internationalization</li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <h2>Q&A</h2>
+                </section>
+                <section>
+                    <h2>Thank you!</h2>
+                </section>
+            </div>
+        </div>
+        <script src="node_modules/reveal.js/dist/reveal.js"></script>
+        <script src="node_modules/reveal.js/plugin/highlight/highlight.js"></script>
+        <script>
+            Reveal.initialize({
+                plugins: [RevealHighlight]
+            });
+        </script>
+    </body>
+</html>
