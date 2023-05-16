@@ -1,6 +1,1 @@
 */node_modules/
-*/*/*/bin
-*/*/*/obj
-
-*/*/.vs
-*.csproj.user
