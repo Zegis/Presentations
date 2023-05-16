@@ -2,11 +2,12 @@
 
 Short presentation around the keycloak basics, made for Lunch And Learn at work, along with .net core 3.1 and vue 3 demos.
 
+Demos can be found in [separate repository](https://github.com/Zegis/Presentations_demos/tree/main/Keycloak).
+
 Vue 3 is using the keycloak 4.8.3 adapter to better reflect what we're dealing with at work.
 
-Keycloak 15.0.1 demo code will follow.
 
-Please take note that slides are mostly keyworlds around the concepts I was talking about.
+Please take note that slides are mostly keywords around the concepts I was talking about.
 
 ## Concepts
 
