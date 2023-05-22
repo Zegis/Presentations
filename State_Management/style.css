@@ -1,0 +1,13 @@
+.flex-row{
+    display: flex;
+    align-items: center;
+}
+
+ul.flex-column {
+    display: flex;
+    flex-direction: row;
+}
+
+.reveal ul {
+    list-style-type: none;
+}

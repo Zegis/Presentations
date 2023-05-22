@@ -1,0 +1,125 @@
+<!Doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>States 2xM</title>
+        <link rel="stylesheet" href="node_modules/reveal.js/dist/reveal.css">
+        <link rel="stylesheet" href="node_modules/reveal.js/dist/theme/white.css">
+        <link rel="stylesheet" href="node_modules/reveal.js/plugin/highlight/monokai.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section><h1>State M<sup>2</sup></h1></section>
+                <section>
+                    <h2>Agenda</h2>
+                    <ul>
+                        <li>Example</li>
+                        <li>So what is a State Machine?</li>
+                        <li>State Management</li>
+                        <li>Demo in Angular</li>
+                    </ul>
+                </section>
+                <section>
+                    <section>
+                        <div class="r-stack">
+                            <img class="fragment fade-out" data-fragment-index="0" src="assets/example/Pacman_example.gif">
+                            <div class="fragment fade-in flex-row" data-fragment-index="0">
+                                <div>
+                                    <p>Ghosts make decisions at intersections according to their current state.</p>
+                                    <ul class="fragment fade-in flex-column" data-fragment-index="1">
+                                        <li class="fragment fade-in" data-fragment-index="1"><img src="assets/example/pacman-state-chase.png"></li>
+                                        <li class="fragment fade-in" data-fragment-index="2"><img src="assets/example/pacman-state-scared.png"></li>
+                                        <li class="fragment fade-in" data-fragment-index="3"><img src="assets/example/pacman-state-dead.png"></li>
+                                        <li class="fragment fade-in" data-fragment-index="4"><img src="assets/example/pacman-state-scatter.png"></li>
+                                    </ul>
+                                </div>                                
+                                <img src="assets/example/Pacman_intersections.png">
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <img src="assets/example/pacman-diagram.png">
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Ok, so what is a state machine?</h2>
+                    </section>
+                    <section>
+                        <div class="r-stack flex-row">
+                            <div class="flex-row">
+                                <ol>
+                                    <li>Set of States Q</li>
+                                    <li>Initial state<br> q<sub>0</sub> &isin; Q</li>
+                                    <li><span class="fragment highlight-blue" data-fragment-index="1">Set of Accepting States A &sube; Q</span></li>
+                                    <li><span class="fragment highlight-blue" data-fragment-index="1">&sum; Input Alphabet</span></li>
+                                    <li>State Transition Function: <br> &sigma; : Q ⨯ &sum; &rarr; Q </li>
+                                </ol>
+                                <img class="fragment fade-right" data-fragment-index="2" src="assets/definition/Pacman-AI-comic.jpg">
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="r-stack">
+                            <div>
+                            <h2>So did I just waste your time?</h2>
+                            <img class="fragment current-visible" data-fragment-index="1" src="assets/definition/a-little.jpg">
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <div>
+                            <h2>There are many machines out there...</h2>
+                            <div class="flex-row">
+                                <ul>
+                                    <li class="fragment highlight-current-blue">Acceptors</li>
+                                    <li>Classifiers</li>
+                                    <li>Transducers</li>
+                                    <li>Sequencers</li>
+                                </ul>
+                                <ul class="fragment fade-in">
+                                    <li>Determinism</li>
+                                    <li class="fragment highlight-blue">Implementation</li>
+                                </ul>
+                                <ul class="fragment fade-in" style="font-size: smaller;">
+                                    <li>Automata</li>
+                                    <li class="fragment highlight-blue">Event driven</li>
+                                    <li>Virtual FSM</li>
+                                    <li>State pattern</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <div>
+                            <h2>Acceptor example</h2>
+                            <img src="assets/definition/acceptor.png">
+                            <p style="font-size: smaller;">This FMS accepts only A,B strings with odd number of A letters at the end</p>
+                        </div>
+                    </section>
+                </section>
+                <section>
+                    <section><h2>State management</h2></section>
+                    <section>
+                        <div>
+                            <h3>Why it's important?</h3>
+                            <img class="fragment fade-in" src="assets/management/square-hole.gif" style="height: 60%; width: 50%;">
+                        </div>
+                    </section>
+                    <section><div><img src="assets/management/management-lifecycle.png"></div></section>
+                </section>
+                <section><h2>Demo time!</h2></section>
+            </div>
+        </div>
+        <script src="node_modules/reveal.js/dist/reveal.js"></script>
+        <script src="node_modules/reveal.js/plugin/highlight/highlight.js"></script>
+        <script>
+            Reveal.initialize({
+                plugins: [RevealHighlight]
+            });
+        </script>
+    </body>
+</html>
