@@ -2,7 +2,7 @@
 
 Short presentation around the concept of Finite State Machine, and how to manage state in Angular using NgRX.
 
-Demos can be found in [separate repository](https://github.com/Zegis/Presentations_demos/tree/main/Keycloak).
+Demos can be found in [separate repository](https://github.com/Zegis/Presentations_demos/tree/main/State_Management/angular/initial-store).
 
 Please take note that slides are mostly keywords around the concepts I was talking about.
 
