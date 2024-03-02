@@ -1,0 +1,163 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>CORS recap</title>
+        <link rel="stylesheet" href="node_modules/reveal.js/dist/reveal.css">
+        <link rel="stylesheet" href="node_modules/reveal.js/dist/theme/white.css">
+        <link rel="stylesheet" href="node_modules/reveal.js/plugin/highlight/monokai.css">
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section><h1>CORS recap</h1></section>
+                <section><h2>Agenda</h2>
+                    <ul>
+                        <li>What is http OPTIONS method?</li>
+                        <li>What is Origin?</li>
+                        <li>So what's cors?</li>
+                        <li>What are simple requests?</li>
+                        <li>Considerations</li>
+                    </ul>
+                </section>
+                <section>
+                    <section>
+                        <img src="assets/Options_capture.PNG">
+                    </section>
+                    <section>
+                        <pre><code class="language-http"  data-noescape data-trim>
+                            OPTIONS /api/Published HTTP/1.1
+                            Access-Control-Request-Method: POST
+                            Access-Control-Request-Headers: authorization
+                            Origin: http://localhost:8081
+                            Host: localhost:65209
+                        </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <div class="r-stack">
+                            <h2 class="fragment fade-out" data-fragment-index="1">This is not exactly a security thing!</h2>
+                            <img class="fragment fade-in-then-out" data-fragment-index="1" src="assets/Why.png">
+                            <ul class="fragment fade-in" data-fragment-index="2">
+                                <li>I mean maybe a little</li>
+                                <li class="fragment fade-in" data-fragment-index="3">Mostly a backward-compatibility</li>
+                            </ul>
+                        </div>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <pre><code data-trim data-noescape class="language-http">
+                            [scheme]://[hostname]:[port]
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Examples:</h2>
+                        <div class="r-stack">
+                            <ul>
+                                <li class="fragment fade-in-then-out" data-fragment-index="1">http://example.com/Vue/index.html</li>
+                                <li class="fragment fade-in-then-out" data-fragment-index="1">http://example.com/Api/home</li>
+                                
+                                <li class="fragment fade-in-then-out" data-fragment-index="2">https://example.com</li>
+                                <li class="fragment fade-in-then-out" data-fragment-index="2">http://example.com</li>
+
+                                <li class="fragment fade-in-then-out" data-fragment-index="3">http://example.com</li>
+                                <li class="fragment fade-in-then-out" data-fragment-index="3">http://example.com:8081</li>
+                                
+                                <li class="fragment fade-in-then-out" data-fragment-index="4">https://example.com:8081</li>
+                                <li class="fragment fade-in-then-out" data-fragment-index="4">https://login.example.com:8081</li>
+                            </ul>
+                        </div>
+                    </section>
+                </section>
+                <section>
+                    <section>CORS => Cross Origin Resource Sharing</section>
+                    <section class="r-stack">
+                        <ul>
+                            <li>1993 - Javascript</li>
+                            <li class="fragment" data-fragment-index="1">1995 - Same Origin Policy</li>
+                            <li class="fragment" data-fragment-index="2">2004 - CORS</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <ul>
+                            <li>Write</li>
+                            <li>Embed</li>
+                            <li>Read</li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section>Simple requests vs Not-So-Simple Requests</section>
+                    <section>
+                        <div class="flex-row">
+                            <ul>
+                                <li>HEAD</li>
+                                <li>GET</li>
+                                <li>POST</li>
+                            </ul>
+                            <ul class="fragment fade-in">
+                                <li>Accept</li>
+                                <li>Accept-Language</li>
+                                <li>Content-Language</li>
+                                <li class="fragment highlight-blue">Content-Type</li>
+                            </ul>
+                            <ul class="fragment fade-in">
+                                <li>application/x-www-form-urlencoded</li>
+                                <li>multipart/form-data</li>
+                                <li>text/plain</li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section>
+                        <pre><code class="language-http"  data-noescape data-trim>
+                            HTTP/1.1 200 OK
+                            Access-Control-Allow-Origin: http://localhost:8081
+                            Access-Control-Allow-Headers: authorization
+                            Access-Control-Allow-Methods: GET,POST,DELETE
+                        </code></pre>
+                    </section>
+                    <section>
+                        <div>
+                            <p>Access-Controll-*-*</p>
+                            <ul>
+                                <li>Allow-Origin</li>
+                                <li>Allow-Methods</li>
+                                <li>Allow-Headers</li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section>
+                        <ul>
+                            <li class="fragment">Expose-Headers</li>
+                            <li class="fragment fade-in">Allow-Credentials</li>
+                            <li class="fragment fade-in">Max-Age</li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section>Brilliant part is that CORS is secure as long as it's correctly configured</section>
+                    <section>But...</section>
+                    <section>Only browsers implement CORS</section>
+                    <section>
+                        <div>
+                            <h2>Configuration issues:</h2>
+                            <ul>
+                                <li>Access-Control-Allow-Origin: *</li>
+                                <li class="fragment"> Access-Control-Allow-Origin: [Bounced Origin]</li>
+                                <li>Vary</li>
+                            </ul>
+                        </div>
+                    </section>
+                </section>
+            </div>
+        </div>
+        <script src="node_modules/reveal.js/dist/reveal.js"></script>
+        <script src="node_modules/reveal.js/plugin/highlight/highlight.js"></script>
+        <script>
+            Reveal.initialize({
+                plugins: [RevealHighlight]
+            });
+        </script>
+    </body>
+</html>
